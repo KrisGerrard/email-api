@@ -1,0 +1,131 @@
+{
+	"info": {
+		"_postman_id": "9f2fbab5-8c16-4a83-893c-84e1ff5d3d1d",
+		"name": "Emails",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/v1/emails?limit=10&offset=0",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"v1",
+						"emails"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "10"
+						},
+						{
+							"key": "offset",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getEmailById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/v1/emails/d678c0a8-017c-4e45-b811-4de5ad1531eb",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"v1",
+						"emails",
+						"d678c0a8-017c-4e45-b811-4de5ad1531eb"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createEmail",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"subject\": \"This is static test email 4\",\r\n    \"content\": \"Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.\",\r\n    \"createdAt\": \"2023-05-22T09:55:09.0289001\",\r\n    \"lastUpdatedAt\": \"2023-05-23T09:55:09.0289001\",\r\n    \"sentAt\": null,\r\n    \"status\": \"DRAFT\",\r\n    \"toRecipients\": [\r\n        \"test6@email.com\"\r\n    ],\r\n    \"ccRecipients\": [\r\n        \"test7@email.com\" \r\n    ],\r\n    \"bccRecipients\": []\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/v1/emails",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"v1",
+						"emails"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sendEmail",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/v1/emails/d678c0a8-017c-4e45-b811-4de5ad1531eb/send",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"v1",
+						"emails",
+						"d678c0a8-017c-4e45-b811-4de5ad1531eb",
+						"send"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateEmail",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"d678c0a8-017c-4e45-b811-4de5ad1531eb\",\r\n    \"status\": \"SENT\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/v1/emails/d678c0a8-017c-4e45-b811-4de5ad1531eb",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"v1",
+						"emails",
+						"d678c0a8-017c-4e45-b811-4de5ad1531eb"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
