@@ -17,6 +17,7 @@ public record EmailDto(
     Collection<String> bccRecipients
 )
 {
+
     public static EmailDto fromEmail(Email email)
     {
        return new EmailDto(
